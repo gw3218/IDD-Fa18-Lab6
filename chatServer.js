@@ -61,7 +61,7 @@ function bot(data, socket, questionNum) {
     waitTime = 4000;
     question = 'Where do you study?'; // load next question
   } else if (questionNum == 2) {
-    answer = 'Cool! I hope I can also study at ' + input + ' when I grow up';
+    answer = 'Cool! I hope I can also study at ' + input + ' too!';
     waitTime = 4000;
     question = 'Whats your favorite color? ' ; // load next question
   } else if (questionNum == 3) {
