@@ -30,7 +30,7 @@ io.on('connect', function(socket) {
   var questionNum = 0; // keep count of question, used for IF condition.
   socket.on('loaded', function() { // we wait until the client has loaded and contacted us that it is ready to go.
 
-    socket.emit('answer', "Hey,I am Magic \"___*-\" a simple chat bot example."); //We start with the introduction;
+    socket.emit('answer', "Hey,I am Magic \"___*-\" "); //We start with the introduction;
     setTimeout(timedQuestion, 5000, socket, "What is your name?"); // Wait a moment and respond with a question.
 
   });
@@ -55,7 +55,7 @@ function bot(data, socket, questionNum) {
     answer = 'Hello ' + input + ' :-)' + '. You have a very nice name!'; // output response
     name = input
     waitTime = 4000;
-    question = 'How old are you?' + name; // load next question
+    question = 'How old are you? ' + name; // load next question
   } else if (questionNum == 1) {
     answer = 'Really, ' + input + ' years old? \n So that means you were born in: ' + (2018 - parseInt(input)) ; // output response
     waitTime = 4000;
@@ -63,7 +63,7 @@ function bot(data, socket, questionNum) {
   } else if (questionNum == 2) {
     answer = 'Cool! I hope I can also study at ' + input + ' when I grow up';
     waitTime = 4000;
-    question = 'Whats your favorite color? ' + name ; // load next question
+    question = 'Whats your favorite color? ' ; // load next question
   } else if (questionNum == 3) {
     answer = 'Ok, ' + input + ' it is.';
     socket.emit('changeBG', input.toLowerCase());
