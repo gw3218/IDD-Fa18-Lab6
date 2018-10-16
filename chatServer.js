@@ -54,25 +54,25 @@ function bot(data, socket, questionNum) {
   if (questionNum == 0) {
     answer = 'Hello ' + input + ' :-)' + '. You have a very nice name!'; // output response
     name = input
-    waitTime = 2000;
+    waitTime = 4000;
     question = 'How old are you?' + name; // load next question
   } else if (questionNum == 1) {
     answer = 'Really, ' + input + ' years old? So that means you were born in: ' + (2018 - parseInt(input)) ; // output response
-    waitTime = 2000;
+    waitTime = 4000;
     question = 'Where do you study?'; // load next question
   } else if (questionNum == 2) {
     answer = 'Cool! I hope I can also study at' + input + 'when I grow up';
-    waitTime = 2000;
-    question = 'Whats your favorite color?' + name; // load next question
+    waitTime = 4000;
+    question = 'Whats your favorite color?' + name ; // load next question
   } else if (questionNum == 3) {
     answer = 'Ok, ' + input + ' it is.';
     socket.emit('changeBG', input.toLowerCase());
-    waitTime = 2000;
+    waitTime = 4000;
     question = 'Can you still read the font?'; // load next question
   } else if (questionNum == 4) {
     if (input.toLowerCase() === 'yes' || input === 1) {
       answer = 'Perfect!';
-      waitTime = 2000;
+      waitTime = 4000;
       question = 'After studying for a whole day, you much be very tired. Right?';
     } else if (input.toLowerCase() === 'no' || input === 0) {
       socket.emit('changeFont', 'white'); /// we really should look up the inverse of what we said befor.
@@ -84,7 +84,7 @@ function bot(data, socket, questionNum) {
       question = 'Can you still read the font?'; // load next question
       answer = 'I did not understand you. Could you please answer "yes" or "no"?'
       questionNum--;
-      waitTime = 2000;
+      waitTime = 4000;
     }
     // load next question
   } else {
