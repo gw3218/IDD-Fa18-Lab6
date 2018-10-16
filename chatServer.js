@@ -57,7 +57,7 @@ function bot(data, socket, questionNum) {
     waitTime = 4000;
     question = 'How old are you?' + name; // load next question
   } else if (questionNum == 1) {
-    answer = 'Really, ' + input + ' years old? '+ \n + 'So that means you were born in: ' + (2018 - parseInt(input)) ; // output response
+    answer = 'Really, ' + input + ' years old? \n So that means you were born in: ' + (2018 - parseInt(input)) ; // output response
     waitTime = 4000;
     question = 'Where do you study?'; // load next question
   } else if (questionNum == 2) {
@@ -73,7 +73,7 @@ function bot(data, socket, questionNum) {
     if (input.toLowerCase() === 'yes' || input === 1) {
       answer = 'Perfect!';
       waitTime = 4000;
-      question = 'After studying for a whole day, ' + \n + ' you much be very tired. Right?';
+      question = 'After studying for a whole day, \n  you much be very tired. Right?';
     } else if (input.toLowerCase() === 'no' || input === 0) {
       socket.emit('changeFont', 'white'); /// we really should look up the inverse of what we said befor.
       answer = ''
